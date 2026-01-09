@@ -1,0 +1,10 @@
+_build
+*.install
+*.merlin
+_opam
+dev-tools.locks
+tmp
+*.sv
+input*
+*generate.bc
+*generate.exe
