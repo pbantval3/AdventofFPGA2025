@@ -16,6 +16,6 @@
 - The password output is delivered through a running counter; `count` signal that defaults to 16 bits (configurable).
 - When the module is done processing the current input, the `ready` output flag is raised to indicate acceptance of the next rotation.
 
-##Testbench
+## Testbench
 - The testbench takes in a file similar to the puzzle input from AoC. `sample.txt` is the example provided.
 - It sends the data according to the specifications in I/O.
