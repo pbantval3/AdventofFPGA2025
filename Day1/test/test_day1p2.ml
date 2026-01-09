@@ -5,7 +5,7 @@ open! Hardcaml_test_harness
 module Day1p2 = Hardcaml_demo_project.Day1p2
 module Harness = Cyclesim_harness.Make (Day1p2.I) (Day1p2.O)
 
-let in_bits = 10
+let in_bits = 10 (*maybe there's a way to automatically sync this with the src parameter?*)
 let out_bits = 16
 
 let parse_instruction line = 

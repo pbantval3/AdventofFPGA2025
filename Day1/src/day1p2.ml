@@ -45,8 +45,8 @@ let create scope ({clock; clear; left; data_in; data_valid;} : _ I.t) : _ O.t
   let%hw_var temp_val = Variable.reg spec ~width:(in_bits+2) in
   let%hw_var ready = Variable.wire ~default:gnd () in
   
-  let pos_s = mux2 (left &: (position.value ==:. 0)) (of_int_trunc ~width: 12 100) (uresize position.value ~width:12) in
-  let data_s = uresize data_in ~width:12 -- "data_s" in
+  let pos_s = mux2 (left &: (position.value ==:. 0)) (of_int_trunc ~width: (in_bits+2) 100) (uresize position.value ~width:(in_bits+2)) in
+  let data_s = uresize data_in ~width:(in_bits+2) -- "data_s" in
   let target_val = mux2 left (pos_s -: data_s) (pos_s +: data_s) -- "target val" in
 
   let () = compile[
